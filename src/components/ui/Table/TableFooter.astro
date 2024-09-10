@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+type Props = HTMLAttributes<"tfoot">
+
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<tfoot
+  {...attrs}
+  class:list={[
+    "bg-muted/50",
+    "border-t",
+    "font-medium",
+    "[&>tr]:last:border-b-0",
+    className
+  ]}><slot /></tfoot
+>

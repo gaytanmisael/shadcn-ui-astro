@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+type Props = HTMLAttributes<"tr">
+
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<tr
+  class:list={[
+    "border-b",
+    "transition-colors",
+    "hover:bg-muted/50",
+    "data-[state=selected]:bg-muted",
+    className
+  ]}
+  {...attrs}><slot /></tr
+>

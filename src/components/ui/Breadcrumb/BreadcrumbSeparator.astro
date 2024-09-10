@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components"
+import type { HTMLAttributes } from "astro/types"
+interface Props extends HTMLAttributes<"li"> {
+  children?: boolean
+}
+const { children = false, class: className, ...attrs } = Astro.props as Props
+---
+
+<li
+  role="presentation"
+  aria-hidden="true"
+  class:list={["[&>svg]:size-3.5", className]}
+  {...attrs}>
+  > <slot />
+  {children && <Icon name="lucide:ChevronRight" />}
+</li>

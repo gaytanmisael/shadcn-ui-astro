@@ -1,0 +1,8 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { RequireSome } from "@helpers/require"
+type Props = RequireSome<HTMLAttributes<"img">, "src">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<img {...attrs} class:list={["aspect-square", "size-full", className]} />

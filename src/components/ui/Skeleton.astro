@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"div">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<div
+  class:list={["animate-pulse", "rounded-md", "bg-primary/10", className]}
+  {...attrs}>
+</div>

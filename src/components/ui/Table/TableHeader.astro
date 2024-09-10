@@ -1,0 +1,9 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+type Props = HTMLAttributes<"thead">
+
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<thead class:list={["[&_tr]:border-b", className]} {...attrs}><slot /></thead>

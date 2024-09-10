@@ -1,0 +1,19 @@
+---
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"div">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<div
+  class:list={[
+    "relative",
+    "flex",
+    "size-10",
+    "shrink-0",
+    "overflow-hidden",
+    "rounded-full",
+    className
+  ]}
+  {...attrs}>
+  <slot />
+</div>

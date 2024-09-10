@@ -1,0 +1,7 @@
+---
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"nav">
+const { ...attrs } = Astro.props as Props
+---
+
+<nav aria-label="breadcrumb" {...attrs}><slot /></nav>

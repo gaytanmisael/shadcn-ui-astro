@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"span">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<span
+  role="link"
+  aria-disabled="true"
+  aria-current="page"
+  class:list={["font-normal", "text-foreground", className]}
+  {...attrs}><slot /></span
+>

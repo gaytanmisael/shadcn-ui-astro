@@ -1,0 +1,15 @@
+---
+import { Icon } from "astro-icon/components"
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"span">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<span
+  role="presentation"
+  aria-hidden="true"
+  class:list={["flex", "size-9", "items-center", "justify-center", className]}
+  {...attrs}>
+  <Icon name="lucide:DotsHorizontal" size={16} />
+  <span class="sr-only">More</span>
+</span>

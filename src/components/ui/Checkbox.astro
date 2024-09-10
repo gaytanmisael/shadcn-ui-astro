@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components"
+import type { HTMLAttributes } from "astro/types"
+type Props = HTMLAttributes<"input">
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<input
+  type="checkbox"
+  {...attrs}
+  class:list={[
+    "size-4",
+    "appearance-none",
+    "shrink-0",
+    "cursor-pointer",
+    "rounded-sm",
+    "border",
+    "border-sm",
+    "shadow",
+    "focus-visible:outline-none",
+    "focus-visible:ring-1",
+    "focus-visible:ring-ring",
+    "disabled:cursor-not-allowed",
+    "disabled:opacity-50",
+    "checked:animate-checkmark",
+    "checked:bg-no-repeat",
+    "checked:bg-primary",
+    "checked:bg-[linear-gradient(-45deg,transparent_65%,var(--background)_65.99%),linear-gradient(45deg,transparent_75%,var(--background)_75.99%),linear-gradient(-45deg,var(--background)_40%,transparent_40.99%),linear-gradient(45deg,var(--background)_30%,var(--foreground)_30.99%,var(--foreground)_40%,transparent_40.99%),linear-gradient(-45deg,var(--foreground)_50%,var(--background)_50.99%)]"
+  ]}
+/>

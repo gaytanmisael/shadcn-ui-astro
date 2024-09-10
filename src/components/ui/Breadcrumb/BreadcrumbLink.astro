@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { RequireSome } from "@helpers/require"
+
+type Props = RequireSome<HTMLAttributes<"a">, "href">
+
+const { class: className, ...attrs } = Astro.props as Props
+---
+
+<a
+  {...attrs}
+  class:list={["transition-colors", "hover:text-foreground", className]}
+  ><slot /></a
+>
